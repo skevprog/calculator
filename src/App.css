@@ -1,5 +1,49 @@
 .App {
   text-align: center;
-  background-color: #282c34;
+  /* background-color: #282c34; */
   height: 100vh;
+  background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
+
+}
+
+.calculator {
+  width: 17em;
+  background-color: #fff;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.calculator .screen {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  background-color: #B7B9BB;
+  height: 10em;
+  padding: 1em;
+}
+
+.row {
+  display: flex;
+}
+
+.key {
+  background-color: #0F1A21;
+  display: flex;
+  flex: 1;
+  /* flex 1 is like flex grow 1 */
+  /* flex-basis is for starting point */
+  /* flex-grow: 1; */
+  height: 4em;
+  justify-content: center;
+  align-items: center;
+}
+
+.keyboard {
+  color: #fff;
+}
+
+.screen .result {
+  text-align: center;
 }
