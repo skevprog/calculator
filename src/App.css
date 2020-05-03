@@ -1,9 +1,17 @@
 .App {
   text-align: center;
-  /* background-color: #282c34; */
   height: 100vh;
   background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
+}
 
+button:focus {
+  outline: 0;
+}
+
+button {
+  border: none;
+  font-size: 1em;
+  padding: 0;
 }
 
 .calculator {
@@ -32,16 +40,19 @@
   background-color: #0F1A21;
   display: flex;
   flex: 1;
-  /* flex 1 is like flex grow 1 */
-  /* flex-basis is for starting point */
-  /* flex-grow: 1; */
   height: 4em;
   justify-content: center;
   align-items: center;
 }
 
-.keyboard {
+.keyboard .key {
   color: #fff;
+}
+
+.keyboard .clear {
+  background-color: #B7B9BB;
+  padding: 1em;
+  width: 100%;
 }
 
 .screen .result {

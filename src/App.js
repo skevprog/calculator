@@ -1,42 +1,89 @@
-import React from 'react';
+/* eslint-disable radix */
+import React, { PureComponent } from 'react';
+import Key from './components/Key';
+import Screen from './components/Screen';
+import calculation from './utils';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <div className="calculator">
-        <div className="screen">
-          <span className="result">Screen</span>
-        </div>
-        <div className="keyboard">
-          <div className="row">
-            <div className="key">7</div>
-            <div className="key">8</div>
-            <div className="key">9</div>
-            <div className="key">X</div>
-          </div>
-          <div className="row">
-            <div className="key">4</div>
-            <div className="key">5</div>
-            <div className="key">6</div>
-            <div className="key">-</div>
-          </div>
-          <div className="row">
-            <div className="key">1</div>
-            <div className="key">2</div>
-            <div className="key">3</div>
-            <div className="key">+</div>
-          </div>
-          <div className="row">
-            <div className="key">0</div>
-            <div className="key">.</div>
-            <div className="key">%</div>
-            <div className="key">=</div>
+class App extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: '',
+      previousValue: '',
+      operator: '',
+    };
+  }
+
+  handleKeyPress = (e) => {
+    const { value } = e.target;
+    this.setState((prevState) => ({ input: prevState.input + value }));
+  }
+
+  handleOperatorPress = (e) => {
+    const { value } = e.target;
+    this.setState(({ input }) => ({
+      previousValue: input,
+      input: '',
+      operator: value,
+    }));
+  }
+
+  handleEqualPress = () => {
+    const { previousValue, input: currentValue, operator } = this.state;
+    const result = calculation(operator, previousValue, currentValue);
+    this.setState({
+      input: result,
+    });
+  }
+
+  handleClearPress = () => {
+    this.setState({
+      input: '',
+      previousValue: '',
+      operator: '',
+    });
+  }
+
+  render() {
+    const { input } = this.state;
+    return (
+      <div className="App">
+        <div className="calculator">
+          <Screen input={input} />
+          <div className="keyboard">
+            <div className="row">
+              <Key value={7} onClick={this.handleKeyPress} />
+              <Key value={8} onClick={this.handleKeyPress} />
+              <Key value={9} onClick={this.handleKeyPress} />
+              <Key value="/" onClick={this.handleOperatorPress} />
+            </div>
+            <div className="row">
+              <Key value={4} onClick={this.handleKeyPress} />
+              <Key value={5} onClick={this.handleKeyPress} />
+              <Key value={6} onClick={this.handleKeyPress} />
+              <Key value="*" onClick={this.handleOperatorPress} />
+            </div>
+            <div className="row">
+              <Key value={1} onClick={this.handleKeyPress} />
+              <Key value={2} onClick={this.handleKeyPress} />
+              <Key value={3} onClick={this.handleKeyPress} />
+              <Key value="+" onClick={this.handleOperatorPress} />
+            </div>
+            <div className="row">
+              <Key value="." onClick={this.handleKeyPress} />
+              <Key value={0} onClick={this.handleKeyPress} />
+              <Key value="=" onClick={this.handleEqualPress} />
+              <Key value="-" onClick={this.handleKeyPress} />
+            </div>
+            <button type="button" className="clear" onClick={this.handleClearPress}>
+              <span>Clear</span>
+            </button>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;
