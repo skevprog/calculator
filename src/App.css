@@ -45,14 +45,22 @@ button {
   align-items: center;
 }
 
-.keyboard .key {
-  color: #fff;
-}
-
 .keyboard .clear {
   background-color: #B7B9BB;
   padding: 1em;
   width: 100%;
+}
+
+.keyboard .key {
+  color: #fff;
+}
+
+.keyboard .operator {
+  background-color: orangered;
+}
+
+.key:disabled {
+  opacity: 0.8;
 }
 
 .screen .result {
