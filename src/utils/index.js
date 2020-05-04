@@ -18,7 +18,6 @@ const calculation = (operator, a, b) => {
     '-': () => substract(valueOne, valueTwo),
     '/': () => divide(valueOne, valueTwo),
   };
-
   return Operations[operator]();
 };
 
