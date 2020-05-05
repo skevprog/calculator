@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Key, Screen } from '../../components';
 import calculation from '../../utils';
 
@@ -9,7 +9,7 @@ const initialState = {
   disabled: true,
 };
 
-export default class Calculator extends Component {
+export default class Calculator extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,7 +20,9 @@ export default class Calculator extends Component {
       handleKeyPress = (e) => {
         const { value } = e.target;
         // Check if the input has a value and the previousValue is set, to disable the operator button
-        this.setState((prevState) => ({ input: prevState.input + value, disabled: (prevState.input && prevState.previousValue) }));
+        this.setState((prevState) => ({ input: prevState.input + value }), () => this.setState((prevState) => ({
+          disabled: (prevState.input && prevState.previousValue),
+        })));
       }
 
       handleOperatorPress = (e) => {

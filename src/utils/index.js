@@ -7,8 +7,9 @@ const divide = (a, b) => a / b;
 const multiply = (a, b) => a * b;
 
 const calculation = (operator, a, b) => {
-  const valueOne = parseInt(a, 0);
-  const valueTwo = parseInt(b, 0);
+  if (!operator) return '';
+  const valueOne = a.includes('.') ? parseFloat(a) : parseInt(a, 0);
+  const valueTwo = b.includes('.') ? parseFloat(b) : parseInt(b, 0);
   // Avoid executing every operation using common object literal approach
   const Operations = {
     '*': () => multiply(valueOne, valueTwo),
