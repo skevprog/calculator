@@ -45,6 +45,19 @@ button {
   align-items: center;
 }
 
+.key[scale='1'] {
+  animation: scale 0.1s forwards;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .keyboard .clear {
   background-color: #B7B9BB;
   padding: 1em;
