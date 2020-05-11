@@ -1,0 +1,25 @@
+.calculator {
+    width: 17em;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #283345;
+    border-radius: 15px;
+  }
+  
+  .row {
+    display: flex;
+  }
+
+  .keyboard {
+    padding: 0.5em;
+  }
+
+  .keyboard .clear {
+    background-color: rgba(243, 26, 26, 0.788);
+  }
+  
+  .keyboard .operator {
+    background-color: orangered;
+  }

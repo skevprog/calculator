@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Screen.css';
 
 const Screen = ({ input }) => (
-  <div className="screen">
+  <div className="screen transparent-background">
     <span className="result">{input}</span>
   </div>
 );

@@ -1,0 +1,14 @@
+.screen {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 2em;
+    padding: 1em;
+}
+
+.result {
+    text-align: center;
+    font-size: 2.5em;
+    color: #fff;
+    line-height: 32px; /* To center verically (same number as div's height */
+}

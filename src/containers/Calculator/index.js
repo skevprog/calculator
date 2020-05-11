@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Key, Screen } from '../../components';
 import calculation from '../../utils';
+import './Calculator.css';
 
 const initialState = {
   input: '',
@@ -52,7 +53,7 @@ export default class Calculator extends PureComponent {
       render() {
         const { input, disabled } = this.state;
         return (
-          <div className="calculator">
+          <div className="calculator transparent-background">
             <Screen input={input} />
             <div className="keyboard">
               <div className="row">
@@ -99,9 +100,9 @@ export default class Calculator extends PureComponent {
                   onClick={this.handleOperatorPress}
                 />
               </div>
-              <button type="button" className="clear" onClick={this.handleClearPress}>
-                <span>Clear</span>
-              </button>
+              <div className="row">
+                <Key value="Clear" className="clear" onClick={this.handleClearPress} />
+              </div>
             </div>
           </div>
         );

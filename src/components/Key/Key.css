@@ -1,0 +1,35 @@
+.key {
+    background-color: #283345;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 20px;
+    margin: 0.2em;
+    font-size: 1.6em;
+    padding: 0.4em;
+    box-shadow: 15px  10px 15px -3px rgba(0, 0, 0, 0.4),
+    inset 15px 5px 5px -10px rgba(238, 221, 221, 0.4);
+  }
+
+.row:first-child .key {
+  margin: 0 0.2em 0.2em 0.2em;
+}
+
+.key:disabled {
+    opacity: 0.8;
+}
+
+.key[scale='1'] {
+    animation: scale 0.1s forwards;
+}
+  
+@keyframes scale {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

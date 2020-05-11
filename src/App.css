@@ -4,78 +4,16 @@
   background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
 }
 
-button:focus {
-  outline: 0;
-}
-
 button {
   border: none;
   font-size: 1em;
   padding: 0;
 }
 
-.calculator {
-  width: 17em;
-  background-color: #fff;
-  position: absolute;
-  top:50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+button:focus {
+  outline: 0;
 }
 
-.calculator .screen {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  background-color: #B7B9BB;
-  height: 10em;
-  padding: 1em;
-}
-
-.row {
-  display: flex;
-}
-
-.key {
-  background-color: #0F1A21;
-  display: flex;
-  flex: 1;
-  height: 4em;
-  justify-content: center;
-  align-items: center;
-}
-
-.key[scale='1'] {
-  animation: scale 0.1s forwards;
-}
-
-@keyframes scale {
-  0% {
-    transform: scale(0.9);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.keyboard .clear {
-  background-color: #B7B9BB;
-  padding: 1em;
-  width: 100%;
-}
-
-.keyboard .key {
-  color: #fff;
-}
-
-.keyboard .operator {
-  background-color: orangered;
-}
-
-.key:disabled {
-  opacity: 0.8;
-}
-
-.screen .result {
-  text-align: center;
+.transparent-background {
+  background-color: transparent;
 }

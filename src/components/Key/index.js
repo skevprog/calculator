@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import './Key.css';
 
 const Key = React.memo((props) => {
   const [animateButton, setAnimateButton] = useState(0);
