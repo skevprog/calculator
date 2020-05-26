@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Key, Screen } from '../../components';
-import calculation from '../../utils';
+import { calculation } from '../../utils';
 import './Calculator.css';
 
 const initialState = {

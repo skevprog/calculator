@@ -28,4 +28,6 @@ const calculation = (operator, a, b) => {
 };
 
 
-export default calculation;
+export {
+  add, substract, divide, multiply, parseToNumber, calculation,
+};
